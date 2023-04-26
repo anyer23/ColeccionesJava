@@ -17,6 +17,8 @@ promedio final, devuelto por el método y mostrado en el main.
 
 package com.mycompany.eje3alumno;
 
+import Servicio.SeAlumno;
+
 /**
  *
  * @author monte
@@ -24,6 +26,7 @@ package com.mycompany.eje3alumno;
 public class Eje3Alumno {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+       SeAlumno agregarAlumno =new SeAlumno();
+        agregarAlumno.CrearAlumno();
     }
 }
