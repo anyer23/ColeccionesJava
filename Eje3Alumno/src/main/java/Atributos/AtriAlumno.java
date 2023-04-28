@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class AtriAlumno {
     private String nombre;
-    private ArrayList<Integer> notas =new ArrayList<>(3);
+    private ArrayList<Integer> notas ;
 
     public AtriAlumno() {
     }
@@ -38,8 +38,11 @@ public class AtriAlumno {
     public void setNotas(ArrayList<Integer> notas) {
         this.notas = notas;
     }
+@Override
+    public String toString(){
+        return "Nombre del alumno     t"+this.nombre+ " notas t"+notas;
+    }
 
-    
-    
+            
     
 }

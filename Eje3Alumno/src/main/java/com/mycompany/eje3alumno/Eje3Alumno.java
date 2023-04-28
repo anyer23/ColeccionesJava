@@ -28,5 +28,6 @@ public class Eje3Alumno {
     public static void main(String[] args) {
        SeAlumno agregarAlumno =new SeAlumno();
         agregarAlumno.CrearAlumno();
+        agregarAlumno.buscarAlumno();
     }
 }

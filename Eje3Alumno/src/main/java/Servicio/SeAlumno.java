@@ -19,48 +19,86 @@ public class SeAlumno {
     AtriAlumno nuevoAlumno = new AtriAlumno();
     Scanner leer = new Scanner(System.in);
 
-    ArrayList<AtriAlumno> notasAlumno = new ArrayList();
+    ArrayList<AtriAlumno> Alumno = new ArrayList();
 
-    List<Integer> notas = new ArrayList<>();
+    
 
-    public void CrearAlumno() {
+    public ArrayList<AtriAlumno> CrearAlumno() {
 
         do {
             System.out.println("Ingrese el nombre del alumno");
             nuevoAlumno.setNombre(leer.next());
-
+List<Integer> notas = new ArrayList<>();
             for (int i = 1; i < 4; i++) {
+                
                 System.out.print("Ingrese la nota " + i + " :");
-
                 notas.add(leer.nextInt());
+                   
                 leer.nextLine();//salto de linea
             }
+            //agregar notasakumno al objeto alumno
+            nuevoAlumno.setNotas((ArrayList<Integer>) notas);
 
             //crear el ojeto alumno a la lista
-            AtriAlumno alumno = new AtriAlumno(nuevoAlumno.getNombre(), (ArrayList<Integer>) notas);
-            notasAlumno.add(alumno);
-
+            AtriAlumno agalumno = new AtriAlumno(nuevoAlumno.getNombre(), (ArrayList<Integer>) nuevoAlumno.getNotas());
+            Alumno.add(agalumno);
+            
+          
             //pregunta si desea agregar otro alumno
             System.out.println("Desea ingresar otro alumno (S/N)");
 
         } while (leer.nextLine().equalsIgnoreCase("S"));
 
-        for (AtriAlumno atriAlumno : notasAlumno) {
-            System.out.println("Alumnos y notas");
-            System.out.println(atriAlumno.getNombre() + atriAlumno.getNotas());
+        for (AtriAlumno atriAlumno : Alumno) {
+            System.out.println(atriAlumno);
+        }
+       return Alumno;
+        
+    }
+
+    public void buscarAlumno() {
+        System.out.println("Ingrese el nombre del alumno a buscar");
+        String alumnoBuscar = leer.nextLine();
+        boolean encontrada = false;
+
+        for (AtriAlumno alumnoEn : Alumno) {
+            if (alumnoEn.getNombre().equalsIgnoreCase(alumnoBuscar)) {
+                System.out.println("El alumno  " + alumnoEn.getNombre() + " si se encuenta");
+               
+                //System.out.println("notas"+nuevoAlumno.getNotas());
+                 
+                 NotaFinal(alumnoEn);
+                 encontrada = true;
+                 break;
+            } 
+            
+            
 
         }
+        if (!encontrada) {
+            System.out.println("El alumno no esta en la lista ");
+        }
+        
+    }
 
+    public void NotaFinal(AtriAlumno alumno) {
+        List<Integer> notas=nuevoAlumno.getNotas();
+        
+        double suma=0;
+        //for (AtriAlumno atAlumno : Alumno) {
+         //   if (atAlumno.getNombre().equalsIgnoreCase(nombre)) {
+                for (Integer nota: notas) {
+                    suma += nota;
+                  //  System.out.println(suma);
+                }
+         //   }
+            double x= suma/notas.size();
+            System.out.println("El promedio es " +x);
+      //  }
+        
+        
+    
     }
     
-    public void buscarAlumno(){
-        System.out.println("Ingrese el nombre del alumno a buscar");
-        String alumnoBuscar=leer.nextLine();
-        
-        for (AtriAlumno BuscarAlumno : notasAlumno) {
-              //  Iterator<String> busAlumno = nuevoAlumno.
-
-        }
-    }
-
+    
 }
