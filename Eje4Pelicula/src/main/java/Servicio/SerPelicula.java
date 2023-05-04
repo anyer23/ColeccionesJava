@@ -77,21 +77,21 @@ public class SerPelicula {
     public void ordenMayorMenor() {
         System.out.println("------------------------------------------------");
         System.out.println("Peliculas ordenas de (de menor a mayor)");
-        movie.sort(peli.ordearAse);
+        movie.sort(Pelicula.ordearAse);
         mostarPeli();
     }
 
     public void ordenarTitulo() {
         System.out.println("---------------------------------------.----------");
         System.out.println("Titulo de peliculas ordenas de forma alfabetica");
-        movie.sort(peli.tituloAlfabeticamente);
+        movie.sort(Pelicula.tituloAlfabeticamente);
         mostarPeli();
     }
     
     public void ordenaDirector(){
        System.out.println("------------------------------------------------");
         System.out.println("Director  ordenas de forma alfabetica");
-        movie.sort(peli.directorOrdenadp);
+        movie.sort(Pelicula.directorOrdenadp);
         mostarPeli(); 
     }
 }

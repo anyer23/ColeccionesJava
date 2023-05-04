@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 /**
  *
@@ -21,7 +22,7 @@ public class Paises {
     SerPaises paises = new SerPaises();
 
     HashSet<String> listaP = new HashSet<>();
-
+//TreeSet<String> listaP = new TreeSet<>();
     Scanner leer = new Scanner(System.in);
 
     public void ingresarPais() {
@@ -47,6 +48,7 @@ public class Paises {
     public void mostrarPais() {
         for (String paises1 : listaP) {
             System.out.println("Pais : " + paises1);
+            
         }
     }
 
