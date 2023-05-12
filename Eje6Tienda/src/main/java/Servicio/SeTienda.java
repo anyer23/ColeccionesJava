@@ -19,7 +19,7 @@ public class SeTienda {
     Tienda ntienda = new Tienda();
     Scanner leer = new Scanner(System.in);
 
-    HashMap<String, Double> listaPro = new HashMap<String, Double>();
+    HashMap<String, Double> listaPro = new HashMap<>();
 
     public void menu() {
         int op = 0;
@@ -34,25 +34,14 @@ public class SeTienda {
             op = leer.nextInt();
 
             switch (op) {
-                case 1:
-                    guardarProducto();
-                    break;
-                case 2:
-                    modificarPrecio();
-                    break;
-                case 3:
-                    eliminarProducto();
-                    break;
-                case 4:
-                    mostarProductos();
-                    break;
-                case 5:
-                    System.out.println("Gracias por usar el programa");
-                    break;
+                case 1 -> guardarProducto();
+                case 2 -> modificarPrecio();
+                case 3 -> eliminarProducto();
+                case 4 -> mostarProductos();
+                case 5 -> System.out.println("Gracias por usar el programa");
 
-                default:
-                    System.out.println("Tiene que introducir una opción valida");
-                    ;
+                default -> System.out.println("Tiene que introducir una opción valida");
+                    
             }
 
         }
@@ -79,7 +68,10 @@ public class SeTienda {
 //Con keySet() lo que se obtiene como indica el nombre de la función son las claves 
     //y mediante un iterador se recorre la lista de claves
     public void mostarProductos() {
-    /*   //1/ String produ;
+        
+    /*   String produ;
+        //Con keySet() lo que se obtiene como indica el nombre de la función son las claves 
+      //y mediante un iterador se recorre la lista de claves
         Iterator<String> productos = listaPro.keySet().iterator();
 
         System.out.println("Los productos en exisencia son ");
